@@ -1,6 +1,7 @@
 package devmapper
 
 /*
+#define _FILE_OFFSET_BITS 64
 #cgo LDFLAGS: -L. -ldevmapper
 #include <stdio.h>
 #include <stdlib.h>
