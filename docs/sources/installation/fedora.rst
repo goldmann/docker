@@ -11,17 +11,7 @@ Fedora
 
 .. include:: install_unofficial.inc
 
-Right now, the only supported distributions are:
-
-- :ref:`fedora_core19`
-- :ref:`fedora_core20`
-
-.. _fedora_core19:
-
-Fedora Core 19 (64-bit)
-^^^^^^^^^^^^^^^^^^^^^^^
-
-This installation path should work at all times.
+Docker is available in **Fedora 19 and later**. Please note that due to the current Docker limitations Docker is able to run only on the **64 bit** architecture.
 
 Installation
 ------------
@@ -36,19 +26,19 @@ Next let's install the ``docker-io`` package which will install Docker on our ho
 
 .. code-block:: bash
 
-   sudo yum -y install docker-io
+   sudo yum -y install docker-io --enablerepo=updates-testing
 
 Now it's installed lets start the Docker daemon.
 
 .. code-block:: bash
 
-    sudo systemctl start docker.service
+    sudo systemctl start docker
 
 If we want Docker to start at boot we should also:
 
 .. code-block:: bash
 
-   sudo systemctl enable docker.service
+   sudo systemctl enable docker
 
 Now let's verify that Docker is working.
 
@@ -57,11 +47,4 @@ Now let's verify that Docker is working.
    sudo docker run -i -t ubuntu /bin/bash
 
 **Done!**, now continue with the :ref:`hello_world` example.
-
-.. _fedora_core20:
-
-Fedora Core 20 (64-bit)
-^^^^^^^^^^^^^^^^^^^^^^^
-
-Use the :ref:`fedora_core19` instructions.
 
