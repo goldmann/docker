@@ -11,7 +11,7 @@
 
 Name:           docker-io
 Version:        1.1.2
-Release:        2%{?dist}
+Release:        2.1%{?dist}
 Summary:        Automates deployment of containerized applications
 License:        ASL 2.0
 Patch1:         upstream-patched-archive-tar.patch
@@ -65,6 +65,8 @@ Provides:       lxc-docker = %{version}
 # In F22, the whole package should be renamed to be just "docker" and
 # this changed to "Provides: docker-io".
 Provides:       docker
+
+Epoch:          2
 
 %description
 Docker is an open-source engine that automates the deployment of any
@@ -446,6 +448,9 @@ exit 0
 %{gopath}/src/%{import_path}/pkg/version/*.go
 
 %changelog
+* Fri Aug 01 2014 Marek Goldmann <mgoldman@redhat.com> - 2:1.1.2-2.1
+- Allow to manage the socket by the Docker daemon
+
 * Fri Aug 01 2014 Lokesh Mandvekar <lsm5@fedoraproject.org> - 1.1.2-2
 - change %else if -> %else %if
 
